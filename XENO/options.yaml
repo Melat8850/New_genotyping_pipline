@@ -1,0 +1,31 @@
+# Absolute path to input CSV
+samples: /cluster/work/users/melatag/new_genotyping_pipeline/samples_updatedfinal_XENO.csv
+
+# Which steps to run?
+trim_align: false
+call_variants: true
+filter_variants: true
+phase_variants: false
+
+# Options for read pre-processing and alignment
+deduplicate: false
+downsample: false
+read_target: 1000000
+aligner: gpu
+exclude_flags: 0x400
+
+# Options for variant calling
+concatenate_raw_vcf: false
+
+# Options for variant filtering
+filtering_label: default_filters
+filtering_flags: ./examples/default_filters.txt
+
+# Options for phasing
+phasing_window_size: 10000000
+
+# Reference genome
+ref_genome: /cluster/work/users/melatag/new_genotyping_pipeline/XENO/MORPH_fixed/output/bPasDom1_original.morph.fasta 
+ref_recombination_map_dir: /cluster/projects/nn10082k/recombination_maps/bPasDom1_recombination_map.txt 
+ref_scaffold_name: scaffold 
+ref_ploidy_file: /cluster/work/users/melatag/new_genotyping_pipeline/XENO/bPasDom1_ploidy.txt
